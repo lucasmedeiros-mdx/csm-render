@@ -51,8 +51,8 @@ angle = -(player.viewAngle * Math.PI / 180);
 context.arc(player.x, player.y, settings.FOV_RADIUS, angle - .25 * Math.PI, angle + .25 * Math.PI, false)
 
 Vary player's body with their current life:
->health = d + 2 * Math.PI / 100 * player.health
->ctx.arc(player.x, player.y, settings.PLAYER_RADIUS, 1.5 * Math.PI, health, false)
+<pre>health = d + 2 * Math.PI / 100 * player.health
+ctx.arc(player.x, player.y, settings.PLAYER_RADIUS, 1.5 * Math.PI, health, false)</pre>
 
 There're still some necessary steps to draw the player (Painting as blue for Counter-Terrorist and red for Terrorists, setting FoV color, player name), but overall it's pretty simple processing.
 
