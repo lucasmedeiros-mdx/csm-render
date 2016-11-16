@@ -85,4 +85,4 @@ I made a small demo putting it all together, but instead you can control the pla
 From this demo it shouldn't be much harder to implement a HTML5 tactic editor version (considering the near function existed, maybe they already tried it and faced some issues), as this would be the obvious next step.
 This is still interesting (imo) to detect "hard to spot" syncs in maps, have fun.
 
-Link: http://localhost:8053/
+Link: [![CSM Rendering Demo](https://lucasmedeiros-mdx.github.io/csm-render/)](https://lucasmedeiros-mdx.github.io/csm-render/)
