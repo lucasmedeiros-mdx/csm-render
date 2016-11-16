@@ -28,7 +28,7 @@ Each location is a coordinate with a X and Y related to the canvas, this informa
 CSM stores coordinates from 3 in 3 pixels. For dust2, the first point is mapped at x:564 y:51, the second at x:567 y:51, and so on. So a user can't be in coordinate (565,51) as that's an invalid location, this is an interesting factor to keep in mind when creating tactics.
 
 This information is loaded in the map settings and applied to the canvas:
->this.loadMap('de_dust2.new.map');
+<pre>this.loadMap('de_dust2.new.map')</pre>
 
 
 **Rendering data**
@@ -36,13 +36,13 @@ This information is loaded in the map settings and applied to the canvas:
 As soon as information is retrieved we can draw it in the Game Board.
 
 The first step is to draw the map image in the background:
->context.drawImage(backgroundImage, 0, 0);
+<pre>context.drawImage(backgroundImage, 0, 0)</pre>
 
 
 To my surprise the player itself isn't an asset (is not stored as an image), but it kinda makes sense as players in CSM are circles that move by the map. So instead CSM uses a different technique to draw the players, and uses geometrical shapes instead.
 
 This is the relevant code when it comes to rendering each player:
->context.arc(player.x, player.y, settings.PLAYER_RADIUS + 3, 2 * Math.PI, 0, false)
+<pre>context.arc(player.x, player.y, settings.PLAYER_RADIUS + 3, 2 * Math.PI, 0, false)</pre>
 
 As you can see, we define the location (x, y) the player is placed and the radius (size) the player will fill.
 
@@ -70,9 +70,9 @@ Now it comes the interesting part, to "update" the game objects this information
 When the game starts, this binary file is requested by the client and the "matchData" is set.
 
 The game executes LoadingState.loadMatchData(), you can now access some information from your console (F12)
->Number of rounds = game.getDataReader().rounds
->Home Team Tactic Name = game.getDataReader().homeTacticName
->Away Team Tactic Name = game.getDataReader().awayTacticName
+<pre>Number of rounds = game.getDataReader().rounds
+Home Team Tactic Name = game.getDataReader().homeTacticName
+Away Team Tactic Name = game.getDataReader().awayTacticName</pre>
 
 This file also contains all game information (player positions and actions in each frame). This information is updated in each object and rerendered all the time (this is what produces 2D animation).
 
