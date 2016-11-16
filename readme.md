@@ -1,10 +1,10 @@
 Back when I played the game only the Java applet existed, and there was no such thing as a HTML5 version. So, in the past few days I've been analyzing CSM code (front-end) to understand how the game is rendered and what kind of information I can get from the API. This post will cover some of these aspects, being more suited to developers, it still has some interesting information about the maps itself.
 
 Some quirks I found:
-	> Pressing "Q" will display the scoreboard while the round is going on, I don't think this exists in the Java version and don't know if this is a popular information, as opposed to the "Spacebar" shorcut.
-	> In Public matches, You can check the tactics name from both teams (and see how creative users are when naming tactics = not really).
-	> You can also check the number of rounds the match has.
-	> It becomes clear the HTML5 version is ported from the Java version
+> Pressing "Q" will display the scoreboard while the round is going on, I don't think this exists in the Java version and don't know if this is a popular information, as opposed to the "Spacebar" shorcut.
+> In Public matches, You can check the tactics name from both teams (and see how creative users are when naming tactics = not really).
+> You can also check the number of rounds the match has.
+> It becomes clear the HTML5 version is ported from the Java version
 
 
 
