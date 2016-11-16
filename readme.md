@@ -31,7 +31,7 @@ This information is loaded in the map settings and applied to the canvas:
 <pre>this.loadMap('de_dust2.new.map')</pre>
 
 
-**Rendering data**
+**Rendering Data**
 
 As soon as information is retrieved we can draw it in the Game Board.
 
