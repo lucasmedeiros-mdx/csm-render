@@ -18,7 +18,7 @@ When creating HTML5 based games, the board where animation is drawn is called "C
 In CSM files, a map is an object with the following information: Image (Background Image), Width, Height, Number of valid coordinates in map, Binary file with coordinates.
 
 This is a mock of CSM initialization of a map:
->var map = new Map(117,0,"de_dust2","maps/de_dust2.new.map","images/de_dust2.png",876,606,17985);
+<pre>var map = new Map(117,0,"de_dust2","maps/de_dust2.new.map","images/de_dust2.png",876,606,17985)</pre>
 
 The basic information here is that we're starting a de_dust2 map and the background image for it is the file "de_dust2.png".
 
