@@ -234,7 +234,6 @@
       ctx.beginPath()
       ctx.moveTo(player.x, player.y)
       ctx.arc(player.x, player.y, s.FOV_RADIUS, angle - .25 * Math.PI, angle + .25 * Math.PI, !1)
-      ctx.closePath();
 
       var g = ctx.createRadialGradient(player.x, player.y, 1, player.x, player.y, s.FOV_RADIUS);
       g.addColorStop(0, "rgba(" + s.FOV_COLOR_DARK + ", 0.33)")
@@ -242,16 +241,17 @@
       g.addColorStop(1, "rgba(" + s.FOV_COLOR + ", 0)")
       ctx.fillStyle = "rgba(239, 242, 248, 0.2)"
       ctx.fill()
+      ctx.closePath();
 
       // Draw circle border
       ctx.beginPath()
       ctx.arc(player.x, player.y, s.PLAYER_RADIUS, d, e, !1)
-      ctx.closePath()
       ctx.lineWidth = 2
       ctx.strokeStyle = "rgba(0, 0, 0, " + c + ")"
       ctx.stroke()
       ctx.fillStyle = "rgba(239, 242, 248, " + c + ")"
       ctx.fill()
+      ctx.closePath()
 
       d = 1.5 * Math.PI
       e = d + 2 * Math.PI / 100 * player.health
@@ -260,7 +260,6 @@
       ctx.beginPath()
       ctx.moveTo(player.x, player.y)
       ctx.arc(player.x, player.y, s.PLAYER_RADIUS, d, e, !1)
-      ctx.closePath()
       ctx.fillStyle = "rgba(" + s.TEAM_COLORS[player.team] + ", " + c + ")"
       ctx.fill()
       ctx.font = "bold 8px Arial"
@@ -271,6 +270,7 @@
          ctx.strokeStyle = "rgba(255, 255, 255, " + c + ")"
       ctx.strokeText(player.name, player.x, player.y - 15)
       ctx.fillText(player.name, player.x, player.y - 15)
+      ctx.closePath()
    };
 
    // The main game loop
