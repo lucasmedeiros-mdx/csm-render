@@ -7,10 +7,14 @@ Some quirks I found:
 	> It becomes clear the HTML5 version is ported from the Java version
 
 
+
 **Game Board**
+
 When creating HTML5 based games, the board where animation is drawn is called "Canvas", this will be referenced in following sections.
 
+
 **Loading Map Information**
+
 In CSM files, a map is an object with the following information: Image (Background Image), Width, Height, Number of valid coordinates in map, Binary file with coordinates.
 
 This is a mock of CSM initialization of a map:
@@ -25,6 +29,7 @@ CSM stores coordinates from 3 in 3 pixels. For dust2, the first point is mapped 
 
 This information is loaded in the map settings and applied to the canvas:
 this.loadMap('de_dust2.new.map');
+
 
 **Rendering data**
 
@@ -51,12 +56,16 @@ ctx.arc(player.x, player.y, settings.PLAYER_RADIUS, 1.5 * Math.PI, health, false
 
 There're still some necessary steps to draw the player (Painting as blue for Counter-Terrorist and red for Terrorists, setting FoV color, player name), but overall it's pretty simple processing.
 
+
 **Animation Frame**
+
 To perform an animation we need to render the board with updated information again and again. There are many techniques to solve this problem, CSM is using a basic setInterval loop that executes the "main" method.
 
 The appropriate action here would be to use a requestAnimationFrame that executes both the "update" and "render" methods instead.
 
+
 **Loading Game Information**
+
 Now it comes the interesting part, to "update" the game objects this information has to come from somewhere. And each match in CSM is stored in a different file in the server.
 When the game starts, this binary file is requested by the client and the "matchData" is set.
 
@@ -69,7 +78,9 @@ This file also contains all game information (player positions and actions in ea
 
 There's also another file that contains FOV information (if you can see both teams, or only yours), I'll not get into many details. But if you only have access to one team, a different file will be parsed from back-end filtering the points from the opponent (I tried it, for science). Not saying the system is bullet proof, but at least you can't see tactics from others.
 
+
 **Quick Demo**
+
 I made a small demo putting it all together, but instead you can control the player with WASD and the Field of View with the mouse. The actual function to defect collision was already implemented in their file (it's justed not used), I just did some changes to consider only 3px (they were considering 6px for some reason). 
 From this demo it shouldn't be much harder to implement a HTML5 tactic editor version (considering the near function existed, maybe they already tried it and faced some issues), as this would be the obvious next step.
 This is still interesting (imo) to detect "hard to spot" syncs in maps, have fun.
