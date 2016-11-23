@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div id="feedback" >Nothing</div>
+	<canvas id="myCanvas" width="876" height="606"></canvas>
+	<title>RGB</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+
+		var image = new Image();
+		image.onload = function() {
+			ctx.drawImage(this, 0, 0);
+		}
+		image.src = 'images/de_dust2.mask.png';
+
+
+		document.querySelector('#myCanvas').onmousedown = function(e) {
+		    var r = document.querySelector('#myCanvas').getBoundingClientRect();
+			x = e.clientX - r.left;
+			y = e.clientY - r.top;
+			var data=ctx.getImageData(x,y,1,1).data;
+			console.log(x, y)
+		    document.querySelector('#feedback').innerHTML = "Red : "+data[0]+" __  Green : "+data[1]+" __  Blue : "+data[2]+" __  Alpha : "+data[3];
+		};		
+	</script>
+</body>
+</html>
