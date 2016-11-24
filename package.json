@@ -1,7 +1,7 @@
 {
   "name": "csm-render",
   "version": "1.0.0",
-  "description": "",
+  "description": "Back when I played the game only the Java applet existed, and there was no such thing as a HTML5 version. So, in the past few days I've been analyzing CSM code (front-end) to understand how the game is rendered and what kind of information I can get from the API. This post will cover some of these aspects, being more suited to developers, it still has some interesting information about the maps itself.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,5 +20,29 @@
   "bugs": {
     "url": "https://github.com/lucasmedeiros-mdx/csm-render/issues"
   },
-  "homepage": "https://github.com/lucasmedeiros-mdx/csm-render#readme"
+  "homepage": "https://github.com/lucasmedeiros-mdx/csm-render#readme",
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-runtime": "^6.18.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015", "latest"
+    ]
+  },  
+  "presets": [
+    "latest"
+  ]
 }
